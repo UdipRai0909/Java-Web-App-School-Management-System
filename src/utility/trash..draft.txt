@@ -1,0 +1,241 @@
+
+
+
+
+
+
+
+
+FileItemFactory factory = new DiskFileItemFactory(DiskFileItemFactory.DEFAULT_SIZE_THRESHOLD,
+		new File(savePath));
+factory.
+	
+	
+		File fileSaveDir = new File(savePath);
+
+if (!fileSaveDir.exists()) {
+	fileSaveDir.mkdir();
+									
+									
+									
+									
+									
+									String fileName = FilenameUtils.getName(fileItem.getName());
+String fileNamePrefix = FilenameUtils.getBaseName(fileName) + "_";
+String fileNameSuffix = "." + FilenameUtils.getExtension(fileName);
+File file = File.createTempFile(fileNamePrefix, fileNameSuffix, uploadFolder);
+fileItem.write(file);
+System.out.println("File successfully saved as " + file.getAbsolutePath());
+
+
+
+A POST request method is used when the client needs to send data to the server as part of the request, such as when uploading a file or submitting a completed form. In contrast, a GET request method sends a URL and headers only to the server, whereas POST requests also include a message body. This allows arbitrary-length data of any type to be sent to the server. A header field in the POST request usually indicates the message body’s Internet media type.
+
+When submitting a form, the browser streams the content in, combining all parts, with each part representing a field of a form. Parts are named after the input elements and are separated from each other with string delimiters named boundary.
+
+This is what submitted data from the fileupload form looks like, after selecting sample.txt as the file that will be uploaded to the tmp directory on the local file system:
+
+POST /fileupload/upload HTTP/1.1
+Host: localhost:8080
+Content-Type: multipart/form-data; 
+boundary=---------------------------263081694432439
+Content-Length: 441
+-----------------------------263081694432439
+Content-Disposition: form-data; name="file"; filename="sample.txt"
+Content-Type: text/plain
+
+Data from sample file
+-----------------------------263081694432439
+Content-Disposition: form-data; name="destination"
+
+/tmp
+-----------------------------263081694432439
+Content-Disposition: form-data; name="upload"
+
+Upload
+-----------------------------263081694432439--
+The servlet FileUploadServlet.java can be found in the tut-install/examples/web/fileupload/src/java/fileupload/ directory. The servlet begins as follows:
+
+@WebServlet(name = "FileUploadServlet", urlPatterns = {"/upload"})
+@MultipartConfig
+public class FileUploadServlet extends HttpServlet {
+
+    private final static Logger LOGGER = 
+            Logger.getLogger(FileUploadServlet.class.getCanonicalName());
+            
+            
+            
+            String savePath = request.getServletContext().getRealPath("/");
+		System.out.println(savePath);
+		savePath = request.getSession().getServletContext().getRealPath("/");
+		System.out.println(savePath);
+
+		Path path = Paths.get(savePath + "/WEB-INF/resources/images/" + ".png");
+		System.out.println(path);
+
+		savePath = System.getProperty("user.dir");
+		savePath = request.getPathInfo();
+		System.out.println(savePath);
+
+		String rootPath = System.getProperty("catalina.home");
+		System.out.println(rootPath);
+
+		ServletContext ctx = request.getServletContext();
+		System.out.println("ctx = " + rootPath);
+		String relativePath = ctx.getInitParameter("tempfile.dir");
+		System.out.println("relativePath = " + rootPath);
+		
+		
+		
+				<li class="nav-item">
+						<form id="my_form2" method="get" action="ServletLogin">
+							<a href="javascript:{}" class="nav-link"
+								onclick="document.getElementById('my_form2').submit();"> <i
+								class="fas fa-user-secret"> </i> Register
+							</a>
+						</form>
+					</li>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+/*	
+		function defaultCase() {
+					$('.default-block').show().find('input, textarea').prop('disabled', false);
+					$('.create-block').hide().find('input, textarea').prop('disabled', true);
+					$('.edit-block').hide().find('input, textarea').prop('disabled', true);
+				}
+				defaultCase();
+*/
+
+	/*	
+		$('.create-block').hide().find('input, textarea').prop('disabled', true);
+	
+		$('button[name="btnCreate"]').on('click', function() {
+			$('.default-block').hide().find('input, textarea').prop('disabled', true);
+			$('.create-block').show().find('input, textarea').prop('disabled', false);
+			$('.edit-block').hide().find('input, textarea').prop('disabled', true);
+		});
+	
+	*/
+
+
+	/*
+		$(function() {
+			$('#upSecStat').val('${sectionStat}');
+		});
+	*/
+
+	/*
+		$('button[name="btnEdit"]').on('click', function() {
+			$('.default-block').hide().find('input, textarea').prop('disabled', true);
+			$('.create-block').hide().find('input, textarea').prop('disabled', true);
+			$('.edit-block').show().find('input, textarea').prop('disabled', false);
+		});
+	*/
+
+	/*
+		$('input.depView').on('click', function() {
+				$('.default-block').show().find('input, textarea').prop('disabled', false);
+				$('.create-block').hide().find('input, textarea').prop('disabled', true);
+				$('.edit-block').hide().find('input, textarea').prop('disabled', true);
+			});
+	*/
+
+
+	/*	
+	
+	$("#depSubmitDelete").click(removeRecord);
+		
+		
+		function removeRecord(){
+		var customerId = $(this).data('customer-id');
+		bootbox.confirm({
+					message: "Sure to delete?",
+					callback: function(result) {
+						if (result) {
+							$.ajax({
+								method: "POST",
+								url: getCtx() + "/yourRemoveURL",
+								success: function (jsonResponse) {
+									//your on success actions, maybe reload the table or remove the row
+	
+								}
+							});
+						}
+					}
+				});
+	*/
+
+	/*	
+	$(function() {
+			$('body').on('click', '.dep-submit-del', function(e) {
+				$(this.form).submit();
+				$('#myModal').modal('hide');
+			});
+		});
+	*/
+
+	/*	
+	$("#depFormDel").submit(function(event) {
+			event.preventDefault();
+			submitDelForm();
+			return false;
+		});
+	*/
+
+
+
+
+
+
+
+/* Password Field's Visibility */
+
+/*
+
+	function viewPassword() {
+
+		var passwordInput = document.getElementById('upTecPwd');
+		var passStatus = document.getElementById('upTecPwdStat');
+
+		if (passwordInput.type == 'password') {
+			passwordInput.type = 'text';
+			passStatus.className = element.className.replace(/\bfa-eye\b/g, "");
+			passStatus.className += 'fa-eye-slash';
+
+		} else {
+			passwordInput.type = 'password';
+			passStatus.className = 'fa-eye';
+		}
+	}
+
+*/
+
+
+
+/*function removeDepartment() {
+	var deleteId = $(this).val();
+	bootbox.confirm({
+		message: "Sure to delete?",
+		callback: function(result) {
+			if (result) {
+				$.ajax({
+					method: "POST",
+					url: "ServletDepartment",
+					success: function(jsonResponse) {
+						//your on success actions, maybe reload the table or remove the row
+
+					}
+				});
+			}
+		}
+	});
+}*/
+
+
