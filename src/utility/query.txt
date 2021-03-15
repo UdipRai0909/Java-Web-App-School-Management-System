@@ -119,7 +119,7 @@ REFERENCES roles(role_id)
 ON DELETE CASCADE;
 
 INSERT INTO admins(first_name, middle_name, last_name, email, password, address, gender, date_of_birth, contact, image_file_name, role_id) 
-VALUES("Udip", "Yakkha", "Rai", "admin@gmail.com", "adminpass", "Tarkeshwor", "Male", "1998-09-24", 6633445598, "super_admin.png", 1);
+VALUES("Udip", "Yakkha", "Rai", "admin@gmail.com", "adminpass", "Tarkeshwor", "Male", "1998-09-24", 6633445598, "default/super_admin.png", 1);
 
 
 CREATE TABLE courses (
