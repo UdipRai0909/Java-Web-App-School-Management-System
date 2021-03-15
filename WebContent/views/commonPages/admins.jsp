@@ -348,8 +348,8 @@
 
        <div class="form-group col-md-12">
         <label for="rgAdmAdd">Address</label>
-        <textarea class="form-control" rows="5" id="rgAdmAdd"
-         name="rgAdmAdd"><c:out value="${admin.getAdmAdd()}" required/></textarea>
+        <textarea class="form-control" rows="5" id="rgAdmAdd" name="rgAdmAdd"
+         required><c:out value="${admin.getAdmAdd()}"/></textarea>
        </div>
 
       </div>
