@@ -1,9 +1,9 @@
 # eclipse project file
-.settings/
-.classpath
-.project
-.metadata
+# .settings/
+# .classpath
+# .project
+# .metadata
 
-bin/
+# bin/
 
 
