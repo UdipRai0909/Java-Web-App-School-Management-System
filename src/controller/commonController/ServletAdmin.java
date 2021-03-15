@@ -309,7 +309,7 @@ public class ServletAdmin extends HttpServlet {
 
 										} else {
 											HttpSession session = request.getSession();
-											session.setAttribute("student_id", adm.getAdmId());
+											session.setAttribute("admin_id", adm.getAdmId());
 											session.setAttribute("first_name", adm.getAdmFrst());
 											session.setAttribute("middle_name", adm.getAdmMid());
 											session.setAttribute("last_name", adm.getAdmLast());
@@ -424,7 +424,7 @@ public class ServletAdmin extends HttpServlet {
 
 										} else {
 											HttpSession session = request.getSession();
-											session.setAttribute("student_id", adm.getAdmId());
+											session.setAttribute("admin_id", adm.getAdmId());
 											session.setAttribute("first_name", adm.getAdmFrst());
 											session.setAttribute("middle_name", adm.getAdmMid());
 											session.setAttribute("last_name", adm.getAdmLast());

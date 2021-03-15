@@ -280,6 +280,7 @@ public class ServletTeacher extends HttpServlet {
 											fileSaveDir.mkdir();
 										}
 										profileImg.write(imagePath + File.separator + fileName);
+										
 
 										if (request.getParameter("comingFromRegisterForm") == null) {
 											processRequest(request, response);
