@@ -252,7 +252,6 @@ public class ServletTeacher extends HttpServlet {
 
 									fileName = System.currentTimeMillis() + extractFileName(profileImg);
 									System.out.println(imagePath + File.separator + fileName);
-									profileImg.write(imagePath + File.separator + fileName);
 
 									/*********************************************************************************************
 									 **************************************************************** Adding a teacher to database
@@ -286,7 +285,7 @@ public class ServletTeacher extends HttpServlet {
 											processRequest(request, response);
 										} else {
 											HttpSession session = request.getSession();
-											session.setAttribute("student_id", tec.getTecId());
+											session.setAttribute("teacher_id", tec.getTecId());
 											session.setAttribute("first_name", tec.getTecFrst());
 											session.setAttribute("middle_name", tec.getTecMid());
 											session.setAttribute("last_name", tec.getTecLast());
@@ -413,7 +412,7 @@ public class ServletTeacher extends HttpServlet {
 											processRequest(request, response);
 										} else {
 											HttpSession session = request.getSession();
-											session.setAttribute("student_id", tec.getTecId());
+											session.setAttribute("teacher_id", tec.getTecId());
 											session.setAttribute("first_name", tec.getTecFrst());
 											session.setAttribute("middle_name", tec.getTecMid());
 											session.setAttribute("last_name", tec.getTecLast());

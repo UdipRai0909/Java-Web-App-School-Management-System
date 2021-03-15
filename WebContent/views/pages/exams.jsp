@@ -40,15 +40,15 @@
 		<div class="container default-block px-0 my-5">
 			<div class="container-fluid px-0 d-flex align-items-center"> 
 			
-				<c:if test="${sessionScope.role_id == 2 || sessionScope.role_id == 3}">
+				<c:if
+						test="${sessionScope.role_id == 2 || sessionScope.role_id == 3}">
 					<div
 							class="container d-flex justify-content-center align-items-center">
 						<h1 class="xbootstrap">Exams</h1>
 					</div>
 				</c:if>
 				
-				 <c:if
-						test="${sessionScope.role_id == 1}">
+				 <c:if test="${sessionScope.role_id == 1}">
 					<h1 class="w-50 ml-3 xbootstrap float-left text-right">Add to list</h1>
 					<form method="get" action="ServletExam">
 						<button name="btnCreate" type="submit" value="create"
@@ -128,8 +128,7 @@
 	</c:if>
 	<div class="clearfix"></div>
 	
-	<c:if
-			test="${createParam == 'selected' && editParam == null && displayParam == null}">
+	<c:if test="${createParam == 'selected'}">
 		<div class="container create-block px-0 my-5">
 			<div class="container-fluid px-0"> 
 				<h1 class="xbootstrap">Add Exam</h1>
@@ -217,8 +216,7 @@
 	</c:if>
 	<div class="clearfix"></div>
 	
-	<c:if
-			test="${createParam == null && editParam == 'selected' && displayParam == null}">
+	<c:if test="${editParam == 'selected'}">
 		<div class="container edit-block px-0 my-5">
 			<div class="container-fluid px-0"> 
 				<h1 class="xbootstrap">Edit Exam</h1>
@@ -283,7 +281,7 @@
 					      	<option value="Select">Select</option>
 					      	<c:forEach items="${depNames}" var="depUp">
 					      		<option value='<c:out value="${depUp}" />'
-											<c:if test="${serviceExam.getExmNameByDepId(exam.getExmDept()) == depUp}">
+											<c:if test="${serviceExam.getDepNameByDepId(exam.getExmDept()) == depUp}">
 												<c:out value="selected" />
 											</c:if>>
 									<c:out value="${depUp}" />
@@ -314,8 +312,7 @@
 	</c:if>
 	<div class="clearfix"></div>
 	
-		<c:if
-			test="${createParam == null && editParam == null && displayParam == 'selected'}">
+	<c:if test="${displayParam == 'selected'}">
 		<div class="container display-block px-0 my-5">
 			<div
 					class="container-fluid px-0 d-flex justify-content-center align-items-center"> 
@@ -329,8 +326,7 @@
 			</div>
 			
 			<div class="container px-0 d-flex justify-content-center">
-				<table
-						class="table table-striped table-dark w-50 text-left mt-5">
+				<table class="table table-striped table-dark w-50 text-left mt-5">
 				  <thead>
 				    <tr class="text-center title-view bg-primary">
 					  <th scope="row" colspan="2" class="pt-3"><h2>Exam View</h2></th>

@@ -93,7 +93,7 @@
 			      <td>${asg.getAsgRels()}</td>
 			      <td>${asg.getAsgDead()}</td>
 			      <td>${asg.getAsgLvl()}</td>
-			      <td>${serviceAssignment.getAsgNameByDepId(asg.getAsgDept())}</td>
+			      <td>${serviceAssignment.getDepNameByDepId(asg.getAsgDept())}</td>
 			      <td>${serviceAssignment.getTechNameByTechId(asg.getAsgTech())}</td>
 			      
 			    <c:if
@@ -292,7 +292,7 @@
 				      	<option value="Select">Select</option>
 				      	<c:forEach items="${depNames}" var="depUp">
 				      		<option value='<c:out value="${depUp}" />'
-											<c:if test="${serviceAssignment.getAsgNameByDepId(assignment.getAsgDept()) == depUp}">
+											<c:if test="${serviceAssignment.getDepNameByDepId(assignment.getAsgDept()) == depUp}">
 												<c:out value="selected" />
 											</c:if>>
 				      			<c:out value="${depUp}" />
@@ -383,11 +383,11 @@
 				    </tr>
 				    <tr>
 				      <td scope="col">Department</td>
-				      <td>${serviceAssignment.getAsgNameByDepId(assignment.getAsgDept())}</td>
+				      <td>${serviceAssignment.getDepNameByDepId(assignment.getAsgDept())}</td>
 				    </tr>
 				    <tr>
 				      <td scope="col" class="pb-4">Teacher</td>
-				      <td class="pb-4">${serviceAssignment.getAsgNameByDepId(assignment.getAsgTech())}</td>
+				      <td class="pb-4">${serviceAssignment.getDepNameByDepId(assignment.getAsgTech())}</td>
 				    </tr>
 				  </tbody>
 				</table>

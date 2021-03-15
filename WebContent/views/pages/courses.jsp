@@ -18,16 +18,13 @@
 			test="${createParam == null && editParam == null && displayParam == null}">
 			<title>Courses</title>
 		</c:if>
-		<c:if
-			test="${createParam == 'selected' && editParam == null && displayParam == null}">
+		<c:if test="${createParam == 'selected'}">
 			<title>Create Course</title>
 		</c:if>
-			<c:if
-			test="${createParam == null && editParam == 'selected' && displayParam == null}">
+			<c:if test="${editParam == 'selected'}">
 			<title>Edit Course</title>
 		</c:if>
-			<c:if
-			test="${createParam == null && editParam == null && displayParam == 'selected'}">
+			<c:if test="${displayParam == 'selected'}">
 			<title>Course Profile</title>
 		</c:if>
 			
@@ -66,7 +63,7 @@
 			      <th scope="col">Title</th>
 			      <th scope="col">Credits</th>
 			      <th scope="col">Remarks</th>
-			      <th scope="col">Course</th>
+			      <th scope="col">Department</th>
 			      <th scope="col">Fee Type</th>
 			      <c:if
 									test="${sessionScope.role_id == 1 || sessionScope.role_id == 2}">
@@ -90,7 +87,7 @@
 			      <td>${cos.getCosCrd()}</td>
 			      <td style="height: 150px;"><div
 											class="scrollable custom-scrollbar">${cos.getCosRmk()}</div></td>
-			      <td>${serviceCourse.getCosNameByDepId(cos.getCosDept())}</td>
+			      <td>${serviceCourse.getDepNameByDepId(cos.getCosDept())}</td>
 			      <td>${serviceCourse.getFeeTypeByFeeId(cos.getCosFee())}</td>
 			      
 			    <c:if
@@ -121,7 +118,7 @@
 	</c:if>
 	<div class="clearfix"></div>
 	
-	<c:if test="${createParam == 'selected' && editParam == null}">
+	<c:if test="${createParam == 'selected'}">
 		<div class="container create-block px-0 my-5">
 			<div class="container-fluid px-0"> 
 				<h1 class="xbootstrap">Add Course</h1>
@@ -197,7 +194,7 @@
 	</c:if>
 	<div class="clearfix"></div>
 	
-	<c:if test="${createParam == null && editParam == 'selected'}">
+	<c:if test="${editParam == 'selected'}">
 		<div class="container edit-block px-0 my-5">
 			<div class="container-fluid px-0"> 
 				<h1 class="xbootstrap">Edit Course</h1>
@@ -236,7 +233,7 @@
 				      	<option value="Select">Select</option>
 				      	<c:forEach items="${depNames}" var="depUp">
 				      		<option value='<c:out value="${depUp}" />'
-											<c:if test="${serviceCourse.getCosNameByDepId(course.getCosDept()) == depUp}">
+											<c:if test="${serviceCourse.getDepNameByDepId(course.getCosDept()) == depUp}">
 												<c:out value="selected" />
 											</c:if>>
 								<c:out value="${depUp}" />
@@ -282,8 +279,7 @@
 	</c:if>
 	<div class="clearfix"></div>
 	
-		<c:if
-			test="${createParam == null && editParam == null && displayParam == 'selected'}">
+		<c:if test="${displayParam == 'selected'}">
 		<div class="container display-block px-0 my-5">
 			<div
 					class="container-fluid px-0 d-flex justify-content-center align-items-center"> 
@@ -297,8 +293,7 @@
 			</div>
 			
 			<div class="container px-0 d-flex justify-content-center">
-				<table
-						class="table table-striped table-dark w-50 text-left mt-5">
+				<table class="table table-striped table-dark w-50 text-left mt-5">
 				  <thead>
 				    <tr class="text-center title-view bg-primary">
 					  <th scope="row" colspan="2" class="pt-3"><h2>Course View</h2></th>
