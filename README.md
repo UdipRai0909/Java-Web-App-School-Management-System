@@ -41,7 +41,7 @@
 
 ## Video Demo
 
-[Google drive link](https://drive.google.com/file/d/1L1XVzjjqdFpazz1sNo4FnCM9TJuDmHyU/view?usp=sharing)
+[Google drive link](https://drive.google.com/file/d/1Vhx8oF1iCdSy2QAD4Y8gw6cXofBLnwVe/view?usp=sharing)
 
 ## Steps to reproduce
 
@@ -111,14 +111,12 @@
 
 **_Date: Mar 16, 2021_**
 
-1.  I dont like the Search engine of this site. Well the main focus was MVC pattern in Java JSP JSTL so i didnt think much of it  earlier.
+1.  I dont like the Search engine of this site. Well the main focus was MVC pattern in Java JSP JSTL so I         didnt think much of it  earlier.
 
-1.  The MVC pattern has been followed in a neat fashion but still there are many places where the codes can be written more cleaner and up to       
-    viewerr's or reader's taste. That being said, I have used not-so-inelligent variable names which are not so easy to take in at first glance.
+1.  The MVC pattern has been followed in a neat fashion but still there are many places where the codes can       be written more cleaner and up to viewerr's or reader's taste. That being said, I have used not-so           intelligent variable names which are not so easy to take in at first glance.
 
-1.  I have avoided hard coding in places which can be done. There are still some hard coded parts in the jsp pages which might need some updates in     the future. I have used JSTL tags and properties but i havent really used JSTL functions to be more precise.
+1.  I have avoided hard coding in places which can be done. There are still some hard coded parts in the jsp     pages which might need some updates in     the future. I have used JSTL tags and properties but i havent     really used JSTL functions to be more precise.
 
-1.  The uploaded images do not work unless the project folder is refreshed or the server is restarted. I will need a dynamic way to change how         the uploaded images behave. One more thing is that when i need to edit a user, I want the image file to remain the same if i don't make any         changes to its image.
+1.  The uploaded images do not work unless the project folder is refreshed or the server is restarted. I will     need a dynamic way to change how the uploaded images behave. One more thing is that when i need to edit a     user, I want the image file to remain the same if i don't make any         changes to its image.
 
-1.  I have used proper JSP validations but they can be made much better. Instead of a nested if-else-if, i need to find a more proper way to   
-    validate the html forms. Moreover, I missed javascript validation in this project. I will be sure to do that at least when I have free time.
+1.  I have used proper JSP validations but they can be made much better. Instead of a nested if-else-if, i       need to find a more proper way to validate the html forms. Moreover, I missed javascript validation in       this project. I will be sure to do that at least when I have free time.
